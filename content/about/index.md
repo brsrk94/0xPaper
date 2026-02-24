@@ -13,12 +13,12 @@ I'm <strong>Aditya Tomar</strong>. I build in
 
 <div class="education-grid" role="table" aria-label="Education details">
   <div class="education-row" role="row">
-    <div class="education-key" role="cell">University Name</div>
+    <div class="education-key" role="cell">University</div>
     <div class="education-value" role="cell">Indian Institute of Patna</div>
   </div>
   <div class="education-row" role="row">
     <div class="education-key" role="cell">Grade</div>
-    <div class="education-value" role="cell">CGPA: 9.53</div>
+    <div class="education-value" role="cell">9.53 CGPA</div>
   </div>
 </div>
 
