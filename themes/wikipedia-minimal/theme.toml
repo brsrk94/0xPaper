@@ -1,0 +1,12 @@
+name = "Wikipedia Minimal"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "A minimal Wikipedia-like Hugo theme"
+homepage = "https://adityatomar.xyz"
+tags = ["minimal", "blog", "research", "clean"]
+features = ["blog", "responsive"]
+min_version = "0.110.0"
+
+[author]
+  name = "Aditya Tomar"
+  homepage = "https://adityatomar.xyz"

@@ -1,0 +1,12 @@
+name = "Catppuccin Minimal"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "Minimal Hugo blog theme with Catppuccin palette"
+homepage = "https://adityatomar.xyz"
+tags = ["catppuccin", "minimal", "blog", "research"]
+features = ["blog", "syntax-highlighting", "responsive"]
+min_version = "0.110.0"
+
+[author]
+  name = "Aditya Tomar"
+  homepage = "https://adityatomar.xyz"

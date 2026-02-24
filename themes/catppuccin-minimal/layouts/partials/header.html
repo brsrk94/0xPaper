@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="brand">
+      <a class="site-title" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+      <p class="site-subtitle">{{ .Site.Params.siteDescription }}</p>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="{{ if or (eq .RelPermalink "/about/") (eq .Section "about") }}active{{ end }}" href="{{ "/about/" | relURL }}">About Me</a>
+      <a class="{{ if or (hasPrefix .RelPermalink "/writings/") (eq .Section "writings") }}active{{ end }}" href="{{ "/writings/" | relURL }}">Writings</a>
+      <a class="{{ if or (hasPrefix .RelPermalink "/researches/") (eq .Section "researches") }}active{{ end }}" href="{{ "/researches/" | relURL }}">Researches</a>
+    </nav>
+  </div>
+</header>

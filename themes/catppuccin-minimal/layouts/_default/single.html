@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="content">
+  <h1>{{ .Title }}</h1>
+  {{ if .Date }}<p class="meta">{{ .Date.Format "January 2, 2006" }}</p>{{ end }}
+  {{ if and (eq .Section "researches") .Params.authors }}
+    <p class="meta"><strong>Authors:</strong> {{ delimit .Params.authors ", " }}</p>
+  {{ end }}
+  {{ .Content }}
+  {{ if eq .Section "researches" }}
+    {{ if or .Params.paper_download .Params.paper_url }}
+      <div class="research-actions" aria-label="Research actions">
+        {{ with .Params.paper_download }}
+          <a class="research-action" href="{{ . | relURL }}" download>Download Paper</a>
+        {{ end }}
+        {{ with .Params.paper_url }}
+          <a class="research-action" href="{{ . }}" target="_blank" rel="noopener noreferrer">Visit Research</a>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+</article>
+{{ end }}

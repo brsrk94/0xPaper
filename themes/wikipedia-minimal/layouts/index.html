@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="content">
+  <h1>{{ .Site.Title }}</h1>
+  <p>{{ .Site.Params.siteDescription }}</p>
+
+  <h2>Sections</h2>
+  <ul>
+    <li><a href="{{ "/about/" | relURL }}">About Me</a></li>
+    <li><a href="{{ "/writings/" | relURL }}">Writings</a></li>
+    <li><a href="{{ "/researches/" | relURL }}">Researches</a></li>
+  </ul>
+</section>
+{{ end }}

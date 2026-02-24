@@ -1,0 +1,21 @@
+baseURL = "https://adityatomar.xyz/"
+languageCode = "en-us"
+title = "0xPaper"
+theme = "catppuccin-minimal"
+
+[params]
+  siteDescription = "by Aditya Tomar"
+  author = "Aditya Tomar"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = true
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = false
+    style = "friendly"
+    tabWidth = 2
