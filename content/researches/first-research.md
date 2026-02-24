@@ -8,7 +8,7 @@ authors:
   - "Akshansh Anant"
   - "Professor Pallavi Mishra"
 paper_url: "https://www.researchgate.net/publication/385891164_Clean_Energy_Prediction_Using_Support_Vector_Machines"
-paper_download: "/researches/research-one.pdf"
+paper_download: "researches/research-one.pdf"
 ---
 
 This research explores

@@ -28,6 +28,6 @@ I'm <strong>Aditya Tomar</strong>. I build in
   <p><strong>Email:</strong> <a href="mailto:hey.adityatomar@gmail.com">hey.adityatomar@gmail.com</a></p>
   <p><strong>Twitter:</strong> <a href="https://x.com/0x4d1cf" target="_blank" rel="noopener noreferrer">@0x4d1cf</a></p>
   <div class="about-actions">
-    <a class="research-action" href="/researches/Aditya_Patent_Analyst_Resume.pdf" download>Download Resume</a>
+    <a class="research-action" href="../researches/Aditya_Patent_Analyst_Resume.pdf" download>Download Resume</a>
   </div>
 </div>

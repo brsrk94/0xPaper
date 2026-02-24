@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="content">
   <section class="home-intro" aria-label="Introduction">
-    <img class="home-avatar" src="{{ "/images/avatar.svg" | relURL }}" alt="Aditya Tomar avatar">
+    <img class="home-avatar" src="{{ "images/avatar.svg" | relURL }}" alt="Aditya Tomar avatar">
     <div class="home-copy">
       <p class="lead">A quiet place for long-form thoughts, notes, and technical research.</p>
       <p>Minimal writing space for essays, technical logs, and research drafts.</p>
@@ -10,9 +10,9 @@
 
   <h2>Sections</h2>
   <ul>
-    <li><a href="{{ "/about/" | relURL }}">About Me</a></li>
-    <li><a href="{{ "/writings/" | relURL }}">Writings</a></li>
-    <li><a href="{{ "/researches/" | relURL }}">Researches</a></li>
+    <li><a href="{{ "about/" | relURL }}">About Me</a></li>
+    <li><a href="{{ "writings/" | relURL }}">Writings</a></li>
+    <li><a href="{{ "researches/" | relURL }}">Researches</a></li>
   </ul>
 </section>
 {{ end }}
