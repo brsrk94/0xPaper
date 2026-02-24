@@ -163,17 +163,23 @@ li {
 }
 
 .home-avatar {
-  width: 92px;
-  height: 92px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   border: 1px solid var(--line);
   object-fit: cover;
-  flex: 0 0 92px;
+  flex: 0 0 128px;
   background: #f3f1ec;
 }
 
 .home-copy p {
   margin-bottom: 0.45rem;
+}
+
+.home-rant {
+  font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+  line-height: 1.45;
+  margin-bottom: 0.28rem;
 }
 
 .about-hero {
@@ -448,9 +454,9 @@ td {
   }
 
   .home-avatar {
-    width: 74px;
-    height: 74px;
-    flex-basis: 74px;
+    width: 96px;
+    height: 96px;
+    flex-basis: 96px;
   }
 
   .post-item {
