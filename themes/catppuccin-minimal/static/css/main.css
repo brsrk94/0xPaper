@@ -511,7 +511,7 @@ pre code {
 }
 
 .education-grid {
-  border: 5px solid rgba(31, 31, 31, 0.45);
+  border: 3px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   overflow: hidden;
   margin-top: 0.8rem;
@@ -521,7 +521,7 @@ pre code {
 .education-row {
   display: grid;
   grid-template-columns: 180px 1fr;
-  border-top: 1px solid rgba(31, 31, 31, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .education-row:first-child {
