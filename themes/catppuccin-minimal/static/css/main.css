@@ -511,7 +511,7 @@ pre code {
 }
 
 .education-grid {
-  border: 1px solid rgba(31, 31, 31, 0.3);
+  border: 5px solid rgba(31, 31, 31, 0.45);
   border-radius: 8px;
   overflow: hidden;
   margin-top: 0.8rem;
@@ -585,16 +585,6 @@ pre code {
   background: rgba(141, 215, 255, 0.12);
   border-color: var(--link);
   transform: translateY(-1px);
-}
-
-@media (max-width: 640px) {
-  .education-row {
-    grid-template-columns: 1fr;
-  }
-
-  .education-key {
-    border-bottom: 1px solid var(--line);
-  }
 }
 
 a {
