@@ -14,7 +14,7 @@ I'm <strong>Aditya Tomar</strong>. I build in
 <div class="education-grid" role="table" aria-label="Education details">
   <div class="education-row" role="row">
     <div class="education-key" role="cell">University</div>
-    <div class="education-value" role="cell">Indian Institute of Patna</div>
+    <div class="education-value" role="cell">Indian Institute of Technology, Patna</div>
   </div>
   <div class="education-row" role="row">
     <div class="education-key" role="cell">Grade</div>

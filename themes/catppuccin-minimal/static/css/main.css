@@ -1,5 +1,6 @@
 :root {
   --bg: #fcfbf8;
+  --bg-overlay: rgba(173, 216, 230, 0.18);
   --paper: #fffdf8;
   --text: #1f1f1f;
   --muted: #666;
@@ -19,7 +20,7 @@ body {
 }
 
 body {
-  background: var(--bg);
+  background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), var(--bg);
   color: var(--text);
   font-family: "Outfit", "Segoe UI", Arial, sans-serif;
   font-size: 17px;
@@ -82,26 +83,29 @@ body {
 
 .nav a {
   color: var(--link);
-  text-decoration: none;
   font-size: 0.97rem;
   display: inline-block;
   padding-bottom: 0.2rem;
-  border-bottom: 1px solid transparent;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(76, 189, 162, 0.9);
+  text-decoration-style: wavy;
+  text-underline-offset: 0.2rem;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .nav a:hover {
   color: var(--link-hover);
-  border-bottom-color: var(--link-hover);
+  text-decoration-color: rgba(79, 124, 196, 0.9);
 }
 
 .nav a.active {
   color: var(--text);
-  border-bottom-color: var(--text);
+  text-decoration-color: var(--text);
 }
 
 .page {
   max-width: 760px;
-  margin: 1.4rem auto 2rem;
+  margin: 1rem auto 1.8rem;
   padding: 0 1rem;
   width: 100%;
   flex: 1 0 auto;
@@ -275,6 +279,23 @@ li {
   overflow-x: auto;
 }
 
+.feature-card .highlight {
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  background: #070809;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.feature-card .highlight pre {
+  margin: 0;
+  padding: 1rem 1.35rem;
+  background: transparent;
+  border: 0;
+  color: #e2e8f0;
+}
+
 .about-hero {
   display: flex;
   align-items: center;
@@ -324,7 +345,7 @@ li {
 }
 
 .education-grid {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(31, 31, 31, 0.3);
   border-radius: 8px;
   overflow: hidden;
   margin-top: 0.8rem;
@@ -334,7 +355,7 @@ li {
 .education-row {
   display: grid;
   grid-template-columns: 180px 1fr;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(31, 31, 31, 0.15);
 }
 
 .education-row:first-child {
@@ -343,16 +364,17 @@ li {
 
 .education-key,
 .education-value {
-  padding: 0.62rem 0.75rem;
+  padding: 0.75rem 0.9rem;
 }
 
 .education-key {
-  background: #f8f5ee;
-  font-weight: 500;
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 .connect-box {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(31, 31, 31, 0.25);
   border-radius: 8px;
   padding: 0.75rem 0.85rem;
   max-width: 560px;
@@ -398,11 +420,11 @@ a:hover {
 .post-list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0;
+  margin: 0.1rem 0 0;
 }
 
 .post-item {
-  padding: 0.8rem 0;
+  padding: 0.2rem 0;
 }
 
 .post-item a {

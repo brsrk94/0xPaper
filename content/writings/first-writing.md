@@ -15,17 +15,3 @@ Writing in public begins with experimenting on the page itself. This site is a l
     <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
-
-<div class="feature-card">
-  <p class="feature-title">Code</p>
-  <p class="feature-lead">This is where the syntax highlighting kicks in—Goldmark passes the fenced block to Hugo’s highlighter, and the theme applies friendly colors.</p>
-  <p>The snippet below follows the same structure as the hero section and proves that you can drop any language (C++ in this case) into a card and let the highlighter automatically color the keywords.</p>
-  {{< highlight cpp >}}
-#include <iostream>
-
-int main() {
-  std::cout << "Hello, world from 0xPaper!" << std::endl;
-  return 0;
-}
-  {{< /highlight >}}
-</div>
