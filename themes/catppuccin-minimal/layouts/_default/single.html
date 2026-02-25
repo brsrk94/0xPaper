@@ -5,6 +5,7 @@
   {{ if and (eq .Section "researches") .Params.authors }}
     <p class="meta"><strong>Authors:</strong> {{ delimit .Params.authors ", " }}</p>
   {{ end }}
+
   {{ .Content }}
   {{ if eq .Section "researches" }}
     {{ if or .Params.paper_download .Params.paper_url }}
@@ -17,6 +18,9 @@
         {{ end }}
       </div>
     {{ end }}
+  {{ end }}
+  {{ if or (eq .Section "writings") (eq .Section "researches") }}
+    {{ partial "giscus.html" . }}
   {{ end }}
 </article>
 {{ end }}

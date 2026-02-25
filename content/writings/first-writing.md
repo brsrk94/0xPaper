@@ -2,24 +2,30 @@
 title: "First Writing"
 date: 2026-02-24
 draft: false
-summary: "Why writing in public improves clarity, speed, and long-term thinking."
+summary: "How this site stitches thoughts, visuals, and conversation together."
 ---
 
-Writing in public is one of the highest leverage habits for
-<span class="curl-blue">technical growth</span>.
-It forces the mind to convert vague confidence into
-<span class="curl-green">precise language</span>,
-and that translation process exposes weak assumptions quickly. Ideas that feel complete in private often collapse when turned into sentences someone else can follow. That collapse is useful. It is where better thinking starts.
+Writing in public begins with experimenting on the page itself. This site is a little operating system for ideas: each layout block is hand-tuned, the Markdown is honest, and the UI leans on a minimalist palette so the machinery fades into the background. That setup makes it easy to drop in a new paragraph, embed, or command and immediately see the effect.
 
-A good writing workflow is less about inspiration and more about structure. I usually begin with a narrow question, collect concrete examples, and then draft a simple argument with explicit tradeoffs. During revision, I remove decorative language and keep only what moves the reader from confusion to understanding. The goal is not to sound sophisticated; the goal is to make
-<span class="curl-orange">reasoning inspectable</span>.
+<div class="feature-card">
+  <p class="feature-title">Video</p>
+  <p class="feature-lead">A paragraph about how this page handles video: text frames the purpose, then the embed follows so the viewer sees the clip in context.</p>
+  <p>Below is an embedded Rick Astley clip (yes, the classic). The iframe is centered, sized for the column, and padded so the controls never overlap the surrounding copy.</p>
+  <div class="feature-video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
 
-Over time, published notes become a
-<span class="curl-blue">searchable memory system</span>.
-Instead of repeatedly re-solving the same conceptual problems, I can build on prior drafts and improve them in layers. This creates compounding returns: each post supports future work, and each future post sharpens older ideas. In that way, writing is not separate from engineering work. It is part of the engineering loop.
+<div class="feature-card">
+  <p class="feature-title">Code</p>
+  <p class="feature-lead">This is where the syntax highlighting kicks in—Goldmark passes the fenced block to Hugo’s highlighter, and the theme applies friendly colors.</p>
+  <p>The snippet below follows the same structure as the hero section and proves that you can drop any language (C++ in this case) into a card and let the highlighter automatically color the keywords.</p>
+  {{< highlight cpp >}}
+#include <iostream>
 
-```python
-from datetime import datetime
-
-print(f"published: {datetime.now().isoformat()}")
-```
+int main() {
+  std::cout << "Hello, world from 0xPaper!" << std::endl;
+  return 0;
+}
+  {{< /highlight >}}
+</div>

@@ -1,16 +1,20 @@
 {{ define "main" }}
 <section class="content">
-  <section class="home-intro" aria-label="Introduction">
-    <img class="home-avatar" src="{{ "images/avatar.jpg" | relURL }}" alt="Aditya Tomar avatar">
-    <div class="home-copy">
-      <p class="home-rant">
-        A quiet place for <span class="curl-blue">thoughts</span>,
-        <span class="curl-green">notes</span>, and
-        <span class="curl-orange">research</span>.
-      </p>
-      <p class="home-rant">
-        I share quick reflections from backend, HMI, and practical experiments.
-      </p>
+  <section class="home-hero" aria-label="Introduction">
+    <div class="home-hero__content">
+      <div class="home-copy">
+        <p class="home-rant">
+          A quiet place for <span class="curl-blue">thoughts</span>,
+          <span class="curl-green">notes</span>, and
+          <span class="curl-orange">research</span>.
+        </p>
+        <p class="home-rant">
+          I share quick reflections from backend, HMI, and practical experiments.
+        </p>
+      </div>
+      <figure class="home-hero__visual">
+        <img src="{{ "images/header.jpeg" | relURL }}" width="1500" height="500" alt="Abstract hero banner">
+      </figure>
     </div>
   </section>
 
