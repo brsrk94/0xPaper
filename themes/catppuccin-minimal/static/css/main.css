@@ -759,6 +759,9 @@ td {
     width: 96px;
     height: 96px;
     flex-basis: 96px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.45), transparent 60%);
   }
 
   .post-item {
