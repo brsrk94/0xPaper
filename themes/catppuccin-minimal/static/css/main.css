@@ -1,12 +1,11 @@
 :root {
-  --bg: #fcfbf8;
-  --bg-overlay: rgba(173, 216, 230, 0.18);
-  --paper: #fffdf8;
-  --text: #1f1f1f;
-  --muted: #666;
-  --line: #e4e0d8;
-  --link: #2c5aa0;
-  --link-hover: #183a6a;
+  --bg: #05060a;
+  --paper: #0f111b;
+  --text: #f5f7ff;
+  --muted: #9aa0b2;
+  --line: #1b1f2c;
+  --link: #8dd7ff;
+  --link-hover: #b5e4ff;
 }
 
 * {
@@ -20,7 +19,7 @@ body {
 }
 
 body {
-  background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), var(--bg);
+  background: var(--bg);
   color: var(--text);
   font-family: "Outfit", "Segoe UI", Arial, sans-serif;
   font-size: 17px;
@@ -31,8 +30,8 @@ body {
 }
 
 .site-header {
-  border-bottom: 1px solid var(--line);
-  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 10, 18, 0.95);
 }
 
 .site-header__inner {
@@ -63,7 +62,7 @@ body {
 .site-subtitle {
   display: block;
   margin: -0.06rem 0 0;
-  color: #222;
+  color: var(--muted);
   font-family: "Patrick Hand", "Outfit", sans-serif;
   font-size: clamp(0.72rem, 1.6vw, 1.08rem);
   font-style: normal;
@@ -77,7 +76,7 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
   width: 100%;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 0.25rem;
 }
 
@@ -112,7 +111,7 @@ body {
 }
 
 .site-footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   margin-top: auto;
 }
 
@@ -269,8 +268,55 @@ li {
   border: 0;
 }
 
+/* ─── Inline code ──────────────────────────────────────────────────────────── */
+/* Replaces the old light-background inline code with a dark GitHub-style look */
+
+p code,
+li code,
+td code {
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+  background: #161b22;          /* GitHub Dark panel */
+  border: 1px solid #30363d;    /* GitHub Dark border */
+  color: #e6edf3;               /* GitHub Dark default text */
+  font-size: 0.9em;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+/* ─── Block code / pre ─────────────────────────────────────────────────────── */
+/* Base pre/highlight reset — overridden fully by .feature-card .highlight     */
+
+pre,
+.highlight {
+  margin: 1rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #161b22;
+}
+
+pre code {
+  display: block;
+  padding: 0.9rem 1rem;
+  border: 0;
+  background: transparent;
+  color: #e6edf3;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.highlight pre {
+  margin: 0;
+  border: 0;
+}
+
+/* ─── Feature-card code block (styled shell) ───────────────────────────────── */
+
 .feature-card code {
-  background: rgba(0, 0, 0, 0.04);
+  background: #161b22;
+  color: #e6edf3;
   padding: 0.45rem;
   border-radius: 8px;
   display: block;
@@ -281,20 +327,140 @@ li {
 
 .feature-card .highlight {
   margin-top: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  background: #070809;
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  background: #161b22;           /* GitHub Dark background */
+  box-shadow: inset 0 0 0 1px #30363d, 0 8px 24px rgba(0, 0, 0, 0.6);
   overflow: hidden;
+  border: 1px solid #30363d;
+  position: relative;
+}
+
+.feature-card .highlight::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0.65rem;
+  left: 1.3rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #8b949e;                /* GitHub Dark comment / muted */
 }
 
 .feature-card .highlight pre {
   margin: 0;
-  padding: 1rem 1.35rem;
+  padding: 1.35rem 1.4rem 1.2rem;
   background: transparent;
   border: 0;
-  color: #e2e8f0;
+  color: #e6edf3;                /* GitHub Dark default text */
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
+
+.feature-card .highlight code {
+  display: block;
+  color: inherit;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Subtle top-right glow removed — GitHub Dark is clean and flat */
+.feature-card .highlight::after {
+  content: none;
+}
+
+/* ─── GitHub Dark syntax tokens ────────────────────────────────────────────── */
+
+.highlight .token.comment,
+.highlight .token.prolog,
+.highlight .token.doctype,
+.highlight .token.cdata {
+  color: #8b949e;                /* muted grey — GH dark comments */
+  font-style: italic;
+}
+
+.highlight .token.namespace {
+  opacity: 0.7;
+}
+
+/* Keywords: if, const, return, import … */
+.highlight .token.keyword,
+.highlight .token.important {
+  color: #ff7b72;                /* GH red */
+}
+
+/* Operators and punctuation */
+.highlight .token.operator,
+.highlight .token.punctuation {
+  color: #c9d1d9;
+}
+
+/* Strings and chars */
+.highlight .token.string,
+.highlight .token.char,
+.highlight .token.inserted,
+.highlight .token.attr-value {
+  color: #a5d6ff;                /* GH light blue */
+}
+
+/* Numbers, booleans, constants */
+.highlight .token.number,
+.highlight .token.boolean,
+.highlight .token.constant,
+.highlight .token.symbol {
+  color: #79c0ff;                /* GH blue */
+}
+
+/* Functions */
+.highlight .token.function {
+  color: #d2a8ff;                /* GH purple */
+}
+
+/* Variables, parameters */
+.highlight .token.variable,
+.highlight .token.parameter {
+  color: #ffa657;                /* GH orange */
+}
+
+/* Tags (HTML/JSX) */
+.highlight .token.tag {
+  color: #7ee787;                /* GH green */
+}
+
+/* Attribute names */
+.highlight .token.attr-name {
+  color: #79c0ff;                /* GH blue */
+}
+
+/* Class names, type identifiers */
+.highlight .token.class-name,
+.highlight .token.builtin {
+  color: #ffa657;                /* GH orange */
+}
+
+/* Selectors (CSS) */
+.highlight .token.selector {
+  color: #7ee787;                /* GH green */
+}
+
+/* Properties (CSS) */
+.highlight .token.property {
+  color: #79c0ff;
+}
+
+/* Regex */
+.highlight .token.regex {
+  color: #a5d6ff;
+}
+
+/* Deleted */
+.highlight .token.deleted {
+  color: #ff7b72;
+}
+
+/* ─── Everything else unchanged below ─────────────────────────────────────── */
 
 .about-hero {
   display: flex;
@@ -368,17 +534,23 @@ li {
 }
 
 .education-key {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(141, 215, 255, 0.08);
   font-weight: 600;
   letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.education-value {
+  color: #dfe5ff;
 }
 
 .connect-box {
-  border: 1px solid rgba(31, 31, 31, 0.25);
-  border-radius: 8px;
-  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
   max-width: 560px;
-  background: #fcfaf4;
+  background: rgba(14, 17, 30, 0.9);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
 }
 
 .connect-box p {
@@ -391,6 +563,28 @@ li {
 
 .about-actions {
   margin-top: 0.55rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.about-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-actions a:hover {
+  background: rgba(141, 215, 255, 0.12);
+  border-color: var(--link);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 640px) {
@@ -449,20 +643,20 @@ a:hover {
 
 .research-action {
   display: inline-block;
-  border: 1px solid var(--line);
-  background: #f8f5ee;
+  border: 1px solid rgba(141, 215, 255, 0.5);
+  background: rgba(141, 215, 255, 0.08);
   color: var(--text);
   text-decoration: none;
   padding: 0.42rem 0.72rem;
   border-radius: 6px;
   font-size: 0.92rem;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .research-action:hover {
-  border-color: #cfc7b8;
-  background: #f3eee3;
-  color: var(--text);
-  text-decoration: none;
+  border-color: var(--link);
+  background: rgba(141, 215, 255, 0.18);
+  transform: translateY(-1px);
 }
 
 .giscus-comments {
@@ -482,7 +676,7 @@ blockquote {
   margin: 1.2rem 0;
   padding: 0.2rem 0 0.2rem 1rem;
   border-left: 2px solid var(--line);
-  color: #444;
+  color: #8b949e;
 }
 
 hr {
@@ -494,39 +688,7 @@ hr {
 code,
 kbd,
 samp {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-}
-
-p code,
-li code,
-td code {
-  padding: 0.1rem 0.35rem;
-  border-radius: 4px;
-  background: #f3f1ec;
-  border: 1px solid #e7e2d9;
-  font-size: 0.92em;
-}
-
-pre,
-.highlight {
-  margin: 1rem 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border: 1px solid #e7e2d9;
-  border-radius: 7px;
-  background: #f8f6f1;
-}
-
-pre code {
-  display: block;
-  padding: 0.9rem 1rem;
-  border: 0;
-  background: transparent;
-}
-
-.highlight pre {
-  margin: 0;
-  border: 0;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 table {

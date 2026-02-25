@@ -18,6 +18,4 @@ Key highlights:
 
 Building Nox also meant fine-tuning the QML animations so the launcher slides in smoothly, then routing the chosen command back to the C++ backend to execute.
 
-```js
-console.log("hello dunia")
-```
+> Will resume later

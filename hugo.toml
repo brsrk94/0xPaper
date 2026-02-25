@@ -17,5 +17,5 @@ theme = "catppuccin-minimal"
     guessSyntax = true
     lineNos = true
     lineNumbersInTable = false
-    style = "friendly"
+  style = "dracula"
     tabWidth = 2

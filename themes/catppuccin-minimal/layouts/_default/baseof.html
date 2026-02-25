@@ -18,5 +18,15 @@
   <footer class="site-footer">
     <div class="site-footer__inner">© 0xPaper</div>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".feature-card .highlight").forEach(block => {
+        if (block.dataset.lang) return;
+        const langClass = Array.from(block.classList).find(cls => cls.startsWith("language-"));
+        const lang = langClass ? langClass.replace("language-", "").toUpperCase() : "Code";
+        block.dataset.lang = lang;
+      });
+    });
+  </script>
 </body>
 </html>
